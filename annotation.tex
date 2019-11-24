@@ -1,0 +1,26 @@
+\definecolor{q}{HTML}{228B22}
+\definecolor{wc}{HTML}{FF8C00}
+\definecolor{dnc}{HTML}{FF00FF}
+\definecolor{todo}{HTML}{e13748}
+\definecolor{ben}{HTML}{e13748}
+
+\newcommand{\question}[1]{\textcolor{q}{\textbf{Q:} \textit{#1}}}
+\newcommand{\ben}[1]{\textcolor{ben}{\textbf{Ben:} \textit{#1}}}
+
+\NewDocumentCommand{\wc}{s m}{\IfBooleanTF{#1}{#2}{\textcolor{wc}{\textbf{WC:} \textit{#2}}}}
+\NewDocumentCommand{\ws}{s m}{\IfBooleanTF{#1}{#2}{\textcolor{wc}{\textbf{WS:} \textit{#2}}}}
+
+\NewDocumentCommand{\delete}{s m}{\IfBooleanF{#1}{\textcolor{todo}{\textbf{Delete:} \textit{#2}}}}
+\NewDocumentCommand{\todo}{s o m}{\IfBooleanF{#1}{\textcolor{todo}{\textbf{TODO}\IfNoValueF{#2}{ (#2)}: \textit{#3}}}}
+\NewDocumentCommand{\verify}{s o m}{\IfBooleanTF{#1}{#3}{\textcolor{todo}{\textbf{VERIFY}\IfNoValueF{#2}{ (#2)}: \textit{#3}}}}
+
+\NewDocumentCommand{\move}{s o m}{\textcolor{dnc}{\textbf{\IfBooleanTF{#1}{Duplicate}{Move}}\IfNoValueF{#2}{ (#2)}: \textit{#3}}}
+\NewDocumentCommand{\dupe}{o m}{\move*[#1]{#2}}
+\NewDocumentCommand{\intro}{s m}{\IfBooleanTF{#1}{\dupe[Intro]{#2}}{\move[DnC]{#2}}}
+\NewDocumentCommand{\dnc}{s m}{\IfBooleanTF{#1}{\dupe[DnC]{#2}}{\move[DnC]{#2}}}
+\NewDocumentCommand{\fw}{s m}{\IfBooleanTF{#1}{\dupe[Future Work]{#2}}{\move[DnC]{#2}}}
+
+
+\newcommand{\interp}{\textcolor{todo}{\textbf{Interpretation?}}}
+\newcommand{\expand}[1]{\textcolor{todo}{\textbf{Expand:} \textit{#1}}}
+\newcommand{\goal}[1]{\textcolor{todo}{\textbf{GOAL:} \textit{#1}}}

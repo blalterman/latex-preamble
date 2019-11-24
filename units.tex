@@ -1,0 +1,67 @@
+%==========================
+% units 
+%==========================
+\NewDocumentCommand{\days}{o}{\ensuremath{
+\IfNoValueF{#1}{#1 \,}
+\mathrm{days}
+}}
+
+
+\NewDocumentCommand{\years}{o}{\ensuremath{
+\IfNoValueF{#1}{#1 \,}
+\mathrm{years}
+}}
+
+
+\NewDocumentCommand{\nT}{o}{\ensuremath{
+\IfNoValueF{#1}{#1 \,}
+\mathrm{nT}
+}}
+
+
+\NewDocumentCommand{\km}{o}{\ensuremath{
+\IfNoValueF{#1}{#1 \,}
+\mathrm{km}
+}}
+
+
+\NewDocumentCommand{\au}{o}{\ensuremath{
+\IfNoValueF{#1}{#1 \,}
+\mathrm{AU}
+}}
+
+
+\NewDocumentCommand{\temp}{o}{\ensuremath{
+\IfNoValueF{#1}{#1 \times}
+\mathrm{10^5 \; K}
+}}
+
+
+\NewDocumentCommand{\cc}{o}{\ensuremath{
+\IfNoValueF{#1}{#1 \;}
+\mathrm{cm}^{-3}
+}}
+
+\NewDocumentCommand{\pct}{o}{\ensuremath{
+\IfNoValueF{#1}{#1 \;}
+\%
+}}
+
+%\NewDocumentCommand{\deg}{m}{
+%\ensuremath{#1^\mathrm{o}}
+%}
+
+\NewDocumentCommand{\Rs}{o}{\ensuremath{
+\IfNoValueF{#1}{#1 \;}
+\mathrm{R_S}
+}}
+
+\NewDocumentCommand{\kms}{o}{\ensuremath{
+\IfNoValueF{#1}{#1 \;}
+\mathrm{km \, s^{-1}}
+}}
+
+\NewDocumentCommand{\mWcc}{o}{\ensuremath{
+\IfNoValueF{#1}{#1 \;}
+\mathrm{mW \cc}
+}}

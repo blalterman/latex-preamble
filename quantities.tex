@@ -1,0 +1,225 @@
+%==========================
+% ion populations
+%==========================
+\newcommand{\pc}{\ensuremath{{p_1}}}
+\newcommand{\pb}{\ensuremath{{p_2}}}
+\newcommand{\pmom}{\ensuremath{{p_m}}}
+
+\newcommand{\ac}{\ensuremath{{\alpha_1}}}
+\newcommand{\ab}{\ensuremath{{\alpha_2}}}
+\newcommand{\amom}{\ensuremath{{\alpha_m}}}
+
+\newcommand{\he}{\ensuremath{\mathrm{He}}}
+
+
+%==========================
+% Speeds
+%==========================
+\newcommand{\vsw}{\ensuremath{v_\sw}}
+\newcommand{\vi}{\ensuremath{v_\mathrm{i}}}
+\newcommand{\vv}{\ensuremath{v_0}}
+
+
+%==========================
+% Instabilities
+%==========================
+\acro{AIC}{Alfv\'en ion cyclotron}
+\acro{FMW}{fast magnetosonic / whistler}
+\acro{MM}{mirror mode}
+\acro{OFI}{oblique firehose}
+
+\newcommand{\AIC}{\ac{AIC}}
+\newcommand{\FMW}{\ac{FMW}}
+\newcommand{\MM}{\ac{MM}}
+\newcommand{\OFI}{\ac{OFI}}
+
+
+% TODO: Add additional optional parameter 
+\NewDocumentCommand{\grate}{o o}{\ensuremath{
+\gamma\IfNoValueF{#1}{/\Omega_{#1}}
+\IfNoValueF{#2}{= 10^{{#2}}}
+}}
+
+\NewDocumentCommand{\gmax}{o}{\ensuremath{
+\gamma_\mathrm{max}\IfNoValueF{#1}{/\Omega_{#1}}
+}}
+
+\NewDocumentCommand{\kvec}{o}{\ensuremath{
+\vec{k} \rho\IfNoValueF{#1}{{_{#1}}}
+}}
+
+\NewDocumentCommand{\kpar}{o}{\ensuremath{
+{k_\parallel} \rho\IfNoValueF{#1}{{_{#1}}}
+}}
+
+\NewDocumentCommand{\kper}{o}{\ensuremath{
+{k_\perp} \rho\IfNoValueF{#1}{{_{#1}}}
+}}
+
+
+
+%==========================
+% (beta, R)
+%==========================
+\NewDocumentCommand{\ani}{s o}{\ensuremath{
+R\IfNoValueF{#2}{_{#2}}
+\IfBooleanT{#1}{\, [\perp\!/\!\parallel]}
+}}
+
+
+\NewDocumentCommand{\Trat}{s m m o}{\ensuremath{
+T_{\IfNoValueF{#4}{{#4};}#2}/T_{\IfNoValueF{#4}{{#4};}#3}
+ \IfBooleanT{#1}{\, [\#]}
+}}
+
+
+\NewDocumentCommand{\pbeta}{s o}{\ensuremath{
+\beta\IfNoValueF{#2}{_{#2}}
+ \IfBooleanT{#1}{\, [\#]}
+}}
+
+
+\NewDocumentCommand{\pbetaR}{o}{\ensuremath{
+(\pbeta[\parallel
+\IfNoValueF{#1}{;#1}], \ani[#1])
+}}
+
+
+
+%==========================
+% Differential Flow
+%==========================
+\NewDocumentCommand{\dv}{o}{\ensuremath{\Delta v\IfNoValueF{#1}{_{#1}}}}
+\NewDocumentCommand{\ca}{o}{\ensuremath{C_{A\IfNoValueF{#1}{;#1}}}}
+\NewDocumentCommand{\dvca}{o o}{\ensuremath{\dv[#1]/\ca[#2]}}
+
+
+%==========================
+% Coulomb Collisions
+%==========================
+\NewDocumentCommand{\nuc}{o}{\ensuremath{\nu_{c\IfNoValueF{#1}{;#1}}}}
+\NewDocumentCommand{\Nc}{o}{\ensuremath{N_{c\IfNoValueF{#1}{;#1}}}}
+\NewDocumentCommand{\Ac}{o}{\ensuremath{A_{c\IfNoValueF{#1}{;#1}}}}
+
+\NewDocumentCommand{\tauEXP}{o}{\ensuremath{
+\tau_{\mathrm{exp}\IfNoValueF{#1}{;#1}
+}}
+
+\NewDocumentCommand{\tauCC}{o}{\ensuremath{
+\tau_{\mathrm{C}\IfNoValueF{#1}{;#1}
+}}
+
+
+%==========================
+% SSN and Solar Indices
+%==========================
+\acro{SSN}{sunspot number}
+\NewDocumentCommand{\ssn}{\ac{SSN}}
+
+\acro{SXR}{soft X-ray flux}
+\newcommand{\sxr}{\ac{SXR}}
+
+\newcommand{\Lalpha}{\ensuremath{\mathrm{L}\alpha}}
+\newcommand{\MgII}{\ensuremath{\mathrm{MgII}}}
+
+
+
+%==========================
+% other quantities
+%==========================
+\newcommand{\sw}{\ensuremath{\mathrm{sw}}}
+
+
+\NewDocumentCommand{\qpar}{o}{\ensuremath{
+q_{\parallel
+\IfNoValueF{#1}{;#1}
+}}
+
+\NewDocumentCommand{\edv}{o}{\ensuremath{
+\tilde{E}_{\dv[#1]
+}}
+
+
+\newcommand{\ndays}{\ensuremath{N_\mathrm{days}}}
+
+
+% Specific entropy
+\NewDocumentCommand{\se}{o}{\ensuremath{
+S{\IfNoValueF{#1}{_{#1}}}
+}}
+
+\NewDocumentCommand{\ab}{o}{\ensuremath{
+A{\IfNoValueF{#1}{_{#1}}}
+}}
+
+
+\NewDocumentCommand{\xcorr}{o}{\ensuremath{
+\rho
+\IfNoValueF{#1}{(#1)}
+}}
+
+
+\NewDocumentCommand{\xhel}{o}{\ensuremath{
+\sigma_{c
+\IfNoValueF{#1}{,#1}
+}
+}}
+
+
+%==========================
+% Fit and Correlation Quality
+%==========================
+\newcommand{\chisqnu}{\ensuremath{\chi^2_\nu}}
+\newcommand{\rsq}{\ensuremath{R^2}}
+\newcommand{\rsqinv}{\ensuremath{1/\rsq}}
+
+
+
+%==========================
+% Misc Timescales
+%==========================
+
+\newcommand{\tauS}{\ensuremath{\tau_\mathrm{slow}}}
+\newcommand{\tauF}{\ensuremath{\tau_\mathrm{fast}}}
+
+\newcommand{\tauSA}{\ensuremath{\tau_\mathrm{SA}}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
