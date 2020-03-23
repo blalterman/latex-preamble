@@ -12,6 +12,12 @@
 \mathrm{years}
 }}
 
+\NewDocumentCommand{\s}{o}{\ensuremath{
+\IfNoValueF{#1}{#1 \,}
+\mathrm{s}
+}}
+
+
 
 \NewDocumentCommand{\nT}{o}{\ensuremath{
 \IfNoValueF{#1}{#1 \,}
