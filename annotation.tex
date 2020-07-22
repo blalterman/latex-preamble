@@ -6,7 +6,9 @@
 
 %\newcommand{\question}[1]{\textcolor{q}{\textbf{Q:} \textit{#1}}}
 %\newcommand{\answer}[1]{\textcolor{q}{\textbf{A:} \textit{#1}}}
-\newcommand{\ben}[1]{\textcolor{ben}{\textbf{Ben:} \textit{#1}}}
+\newcommand{\note}[2]{\textcolor{ben}{\textbf{{#1}:} \textit{#2}}}
+%\newcommand{\ben}[1]{\textcolor{ben}{\textbf{Ben:} \textit{#1}}}
+\newcommand{\ben}[1]{\note{ben}{#1}}
 
 \NewDocumentCommand{\question}{s o m}{\IfBooleanF{#1}{\textcolor{q}{\textbf{Q}\IfNoValueF{#2}{ (#2)}: \textit{#3}}}}
 \NewDocumentCommand{\answer}{s o m}{\IfBooleanF{#1}{\textcolor{q}{\textbf{A}\IfNoValueF{#2}{ (#2)}: \textit{#3}}}}
