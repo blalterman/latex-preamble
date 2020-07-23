@@ -97,7 +97,7 @@ T_{\IfNoValueF{#4}{{#4};}#2}/T_{\IfNoValueF{#4}{{#4};}#3}
 %==========================
 \NewDocumentCommand{\dv}{o}{\ensuremath{\Delta v\IfNoValueF{#1}{_{#1}}}}
 \NewDocumentCommand{\ca}{o}{\ensuremath{C_{A\IfNoValueF{#1}{;#1}}}}
-\NewDocumentCommand{\dvca}{o o}{\ensuremath{\dv[#1]/\ca[#2]}}
+\NewDocumentCommand{\dvca}{s o o}{\ensuremath{\IfBooleanTF{#1}{\frac{\dv[#2]}{\ca[#3]}}{\dv[#2]/\ca[#3]}}}
 
 
 %==========================

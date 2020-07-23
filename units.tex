@@ -1,15 +1,15 @@
 %==========================
 % units 
 %==========================
-\NewDocumentCommand{\days}{o}{\ensuremath{
-\IfNoValueF{#1}{#1 \,}
-\mathrm{days}
+\NewDocumentCommand{\days}{s o}{\ensuremath{
+\IfNoValueF{#2}{#2 \,}
+\IfBooleanTF{#1}{\mathrm{day}}{\mathrm{days}}
 }}
 
 
-\NewDocumentCommand{\years}{o}{\ensuremath{
-\IfNoValueF{#1}{#1 \,}
-\mathrm{years}
+\NewDocumentCommand{\years}{s o}{\ensuremath{
+\IfNoValueF{#2}{#2 \,}
+\IfBooleanTF{#1}{\mathrm{year}}{\mathrm{years}}
 }}
 
 \NewDocumentCommand{\s}{o}{\ensuremath{
