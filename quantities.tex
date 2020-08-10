@@ -104,8 +104,20 @@ T_{\IfNoValueF{#4}{{#4};}#2}/T_{\IfNoValueF{#4}{{#4};}#3}
 % Coulomb Collisions
 %==========================
 \NewDocumentCommand{\lnLambda}{}{\ensuremath{\ln \! \Lambda}}
-\NewDocumentCommand{\nuc}{o}{\ensuremath{\nu_{c\IfNoValueF{#1}{;#1}}}}
+%\NewDocumentCommand{\nuc}{o}{\ensuremath{\nu_{c\IfNoValueF{#1}{;#1}}}}
+\NewDocumentCommand{\nuc}{s o}{\ensuremath{\nu_{
+    \IfBooleanTF{#1}
+        {\IfNoValueF{#2}{#2}}
+        {c\IfNoValueF{#2}{;#2}}
+    }
+}}
 \NewDocumentCommand{\Nc}{o}{\ensuremath{N_{c\IfNoValueF{#1}{;#1}}}}
+%\NewDocumentCommand{\Nc}{s o}{\ensuremath{N_{
+%    \IfBooleanTF{#1}
+%        {\IfNoValueF{#2}{#2}}
+%        {c\IfNoValueF{#2}{;#2}}
+%    }
+%}}
 \NewDocumentCommand{\Ac}{o}{\ensuremath{A_{c\IfNoValueF{#1}{;#1}}}}
 
 \NewDocumentCommand{\tauEXP}{o}{\ensuremath{
