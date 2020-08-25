@@ -39,17 +39,17 @@
 
 \NewDocumentCommand{\temp}{o}{\ensuremath{
 \IfNoValueF{#1}{#1 \times}
-\mathrm{10^5 \; K}
+\mathrm{10^5 \, K}
 }}
 
 
 \NewDocumentCommand{\cc}{o}{\ensuremath{
-\IfNoValueF{#1}{#1 \;}
+\IfNoValueF{#1}{#1 \,}
 \mathrm{cm}^{-3}
 }}
 
 \NewDocumentCommand{\pct}{o}{\ensuremath{
-\IfNoValueF{#1}{#1 \;}
+\IfNoValueF{#1}{#1 \,}
 \%
 }}
 
@@ -58,16 +58,16 @@
 %}
 
 \NewDocumentCommand{\Rs}{o}{\ensuremath{
-\IfNoValueF{#1}{#1 \;}
+\IfNoValueF{#1}{#1 \,}
 \mathrm{R_S}
 }}
 
 \NewDocumentCommand{\kms}{o}{\ensuremath{
-\IfNoValueF{#1}{#1 \;}
+\IfNoValueF{#1}{#1 \,}
 \mathrm{km \, s^{-1}}
 }}
 
 \NewDocumentCommand{\mWcc}{o}{\ensuremath{
-\IfNoValueF{#1}{#1 \;}
+\IfNoValueF{#1}{#1 \,}
 \mathrm{mW \cc}
 }}
