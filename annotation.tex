@@ -1,12 +1,21 @@
+% !TEX root = ../manuscript.tex
+
 \definecolor{q}{HTML}{228B22}
 \definecolor{wc}{HTML}{FF8C00}
 \definecolor{dnc}{HTML}{FF00FF}
 \definecolor{todo}{HTML}{e13748}
 \definecolor{ben}{HTML}{e13748}
+\definecolor{bob}{HTML}{0080FF}
 
 %\newcommand{\question}[1]{\textcolor{q}{\textbf{Q:} \textit{#1}}}
 %\newcommand{\answer}[1]{\textcolor{q}{\textbf{A:} \textit{#1}}}
 \newcommand{\ben}[1]{\textcolor{ben}{\textbf{Ben:} \textit{#1}}}
+\newcommand{\mihir}[1]{\textcolor{bob}{\textbf{Mihir:} \textit{#1}}}
+\newcommand{\maher}[1]{\textcolor{bob}{\textbf{Maher:} \textit{#1}}}
+\newcommand{\glenn}[1]{\textcolor{bob}{\textbf{Maher:} \textit{#1}}}
+\newcommand{\george}[1]{\textcolor{bob}{\textbf{Maher:} \textit{#1}}}
+
+\NewDocumentCommand{\note}{s o m}{\IfBooleanF{#1}{\textcolor{q}{\textbf{Note}\IfNoValueF{#2}{ (#2)}: \textit{#3}}}}
 
 \NewDocumentCommand{\question}{s o m}{\IfBooleanF{#1}{\textcolor{q}{\textbf{Q}\IfNoValueF{#2}{ (#2)}: \textit{#3}}}}
 \NewDocumentCommand{\answer}{s o m}{\IfBooleanF{#1}{\textcolor{q}{\textbf{A}\IfNoValueF{#2}{ (#2)}: \textit{#3}}}}
@@ -21,7 +30,7 @@
 
 \NewDocumentCommand{\move}{s o m}{\textcolor{dnc}{\textbf{\IfBooleanTF{#1}{Duplicate}{Move}}\IfNoValueF{#2}{ (#2)}: \textit{#3}}}
 \NewDocumentCommand{\dupe}{o m}{\move*[#1]{#2}}
-\NewDocumentCommand{\intro}{s m}{\IfBooleanTF{#1}{\dupe[Intro]{#2}}{\move[DnC]{#2}}}
+\NewDocumentCommand{\intro}{s m}{\IfBooleanTF{#1}{\dupe[Intro]{#2}}{\move[Intro]{#2}}}
 \NewDocumentCommand{\dnc}{s m}{\IfBooleanTF{#1}{\dupe[DnC]{#2}}{\move[DnC]{#2}}}
 \NewDocumentCommand{\fw}{s m}{\IfBooleanTF{#1}{\dupe[Future Work]{#2}}{\move[DnC]{#2}}}
 

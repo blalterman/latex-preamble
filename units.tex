@@ -1,21 +1,32 @@
+% !TEX root = ../manuscript.tex
+
 %==========================
 % units 
 %==========================
+\NewDocumentCommand{\years}{o}{\ensuremath{
+\IfNoValueF{#1}{#1 \,}
+\mathrm{years}
+}}
+
 \NewDocumentCommand{\days}{o}{\ensuremath{
 \IfNoValueF{#1}{#1 \,}
 \mathrm{days}
 }}
 
-
-\NewDocumentCommand{\years}{o}{\ensuremath{
+\NewDocumentCommand{\months}{o}{\ensuremath{
 \IfNoValueF{#1}{#1 \,}
-\mathrm{years}
+\mathrm{months}
 }}
 
 \NewDocumentCommand{\s}{o}{\ensuremath{
 \IfNoValueF{#1}{#1 \,}
 \mathrm{s}
 }}
+
+%\NewDocumentCommand{\hr}{s o}{\ensuremath{
+%\IfNoValueF{#2}{#2 \,}
+%\IfBooleanTF{#1}{\mathrm{hour}}{\mathrm{hr}}
+%}}
 
 
 
@@ -70,4 +81,25 @@
 \NewDocumentCommand{\mWcc}{o}{\ensuremath{
 \IfNoValueF{#1}{#1 \;}
 \mathrm{mW \cc}
+}}
+
+\NewDocumentCommand{\eV}{o}{\ensuremath{
+\IfNoValueF{#1}{#1 \;}
+\mathrm{eV}
+}}
+
+
+\NewDocumentCommand{\MeV}{o}{\ensuremath{
+\IfNoValueF{#1}{#1 \;}
+\mathrm{MeV}
+}}
+
+\NewDocumentCommand{\nucleon}{s o}{\ensuremath{
+\IfNoValueF{#2}{#2 \;}
+\IfBooleanTF{#1}{\mathrm{nucleon}}{\mathrm{nuc}}
+}}
+
+\NewDocumentCommand{\MeVnuc}{s o}{\ensuremath{
+\IfNoValueF{#2}{#2 \;}
+\MeV \! /\IfBooleanTF{#1}{\nucleon*}{\nucleon}
 }}

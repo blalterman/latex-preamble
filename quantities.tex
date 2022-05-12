@@ -1,3 +1,5 @@
+% !TEX root = ../manuscript.tex
+
 %==========================
 % ion populations
 %==========================
@@ -5,12 +7,37 @@
 \newcommand{\pb}{\ensuremath{{p_2}}}
 \newcommand{\pmom}{\ensuremath{{p_m}}}
 
+\NewDocumentCommand{\Element}{m}{\ensuremath{\mathrm{#1}}}
+\newcommand{\C}{\Element{C}}
+\newcommand{\N}{\Element{N}}
+\newcommand{\Ox}{\Element{O}}
+\newcommand{\Ne}{\Element{Ne}}
+\newcommand{\Mg}{\Element{Mg}}
+\newcommand{\Si}{\Element{Si}}
+\newcommand{\Su}{\Element{S}}
+\newcommand{\Ca}{\Element{Ca}}
+\newcommand{\Fe}{\Element{Fe}}
+
+%\newcommand{\FIP}{\ensuremath{\mathrm{FIP}}}
+\NewDocumentCommand{\FIP}{o}{\ensuremath{
+\ensuremath{\mathrm{FIP}}\IfNoValueF{#1}{=\eV[11]}
+}}
+
+
+\NewDocumentCommand{\AbSEP}{O{X} O{\Ox}}{\ensuremath{#1/#2}}
+
+\NewDocumentCommand{\PLawExp}{s o}{\ensuremath{b
+\IfNoValueF{#2}{\IfBooleanTF{#1}{\approx}{=} #2}}}
+
 %\newcommand{\ac}{\ensuremath{{\alpha_1}}}
 %\newcommand{\ab}{\ensuremath{{\alpha_2}}}
 %\newcommand{\amom}{\ensuremath{{\alpha_m}}}
 
-\newcommand{\he}{\ensuremath{\mathrm{He}}}
+\newcommand{\he}{\Element{He}}
 
+
+\NewDocumentCommand{\MpQ}{o}{\ensuremath{
+\IfNoValueTF{#1}{\mathrm{M/Q}}{(\mathrm{M/Q})_{#1}}}}
 
 %==========================
 % Speeds
@@ -114,7 +141,10 @@ T_{\IfNoValueF{#4}{{#4};}#2}/T_{\IfNoValueF{#4}{{#4};}#3}
 % SSN and Solar Indices
 %==========================
 %\acro{SSN}{sunspot number}
-%\NewDocumentCommand{\ssn}{\ac{SSN}}
+\NewDocumentCommand{\SSN}{o}{\ensuremath{\mathrm{SSN}
+\IfNoValueF{#1}{#1}}}
+\NewDocumentCommand{\NSSN}{o}{\ensuremath{\mathrm{NSSN}
+\IfNoValueF{#1}{#1}}}
 
 %\acro{SXR}{soft X-ray flux}
 %\newcommand{\sxr}{\ac{SXR}}
@@ -140,7 +170,9 @@ q_{\parallel
 }}}
 
 
-\newcommand{\ndays}{\ensuremath{N_\mathrm{days}}}
+\NewDocumentCommand{\ndays}{o}{
+\ensuremath{N_\mathrm{days}{\IfNoValueF{#1}{= {#1}}}}
+}
 
 
 % Specific entropy
@@ -165,6 +197,14 @@ A{\IfNoValueF{#1}{_{#1}}}
 }
 }}
 
+
+%==========================
+% Suprathermals
+%==========================
+\NewDocumentCommand{\SpecInd}{o}{\ensuremath{\gamma
+\IfNoValueF{#1}{_{#1}}}}
+\NewDocumentCommand{\QT}{o}{\ensuremath{\mathrm{QT}
+\IfNoValueF{#1}{= #1}}}
 
 %==========================
 % Fit and Correlation Quality
